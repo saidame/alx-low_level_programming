@@ -90,14 +90,14 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		r = read(from, buffer, 1024);
+		r = read(fr, buffer, 1024);
 		t = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (r > 0);
 
 	free(buffer);
-	close_file(from);
-	close_file(to);
+	close_file(fr);
+	close_file(t);
 
 	return (0);
 }
